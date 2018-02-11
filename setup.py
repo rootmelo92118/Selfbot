@@ -14,7 +14,7 @@ setup(
     author       = "Aiden",
     author_email = "rootmelo92118@gmail.com",
     packages     = ["akad", "linepy"],
-    package_dir  = {"": "lineselfbot"},
+    package_dir  = {"": "linepy"},
     install_requires = [
     "thrift",
     "requests",
