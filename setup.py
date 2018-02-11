@@ -13,9 +13,15 @@ setup(
     version      = "0.9.3",
     author       = "Aiden",
     author_email = "rootmelo92118@gmail.com",
-    packages     = ["LineApi", "LineThrift"],
-    package_dir  = {"": "LineAlpha"},
+    packages     = ["akad", "linepy"],
+    package_dir  = {"": "lineselfbot"},
     install_requires = [
-    "thrift==0.9.3",
+    "thrift",
     "requests",
     "rsa",
+    "bs4",
+    "lxxm",
+    "gtts",
+    "googletrans",
+    ]
+)
