@@ -5,8 +5,8 @@ from gtts import gTTS
 from googletrans import Translator
 
 
-#client = LineClient()
-client = LineClient(id='rootmelo92118@gmail.com', passwd='melo92118')
+client = LineClient()
+#client = LineClient(id='rootmelo92118@gmail.com', passwd='melo92118')
 #client = LineClient(authToken='AUTH TOKEN')
 client.log("Auth Token : " + str(client.authToken))
 
