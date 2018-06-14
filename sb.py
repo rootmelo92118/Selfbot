@@ -14,7 +14,7 @@ channel = LineChannel(client)
 client.log("Channel Access Token : " + str(channel.channelAccessToken))
 
 poll = LinePoll(client)
-mode='self'
+mode='public'
 cctv={
     "cyduk":{},
     "point":{},
