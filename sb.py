@@ -6,7 +6,6 @@ from googletrans import Translator
 
 
 client = LineClient()
-#client = LineClient(id='rootmelo92118@gmail.com', passwd='melo92118')
 #client = LineClient(authToken='AUTH TOKEN')
 client.log("Auth Token : " + str(client.authToken))
 
@@ -188,6 +187,7 @@ while True:
                                 mode = 'public'
                                 client.sendText(receiver, '已開啟公開')
                             elif text.lower() == '重新開始':
+                                client.sendText(receiver, '重新載入所有程式代碼')
                                 restart_program()
                 except Exception as e:
                     client.log("[SEND_MESSAGE] ERROR : " + str(e))
@@ -269,13 +269,15 @@ while True:
                 try:
                     if cctv['cyduk'][op.param1]==True:
                         if op.param1 in cctv['point']:
-                            Name = client.getContact(op.param2).displayName
-                            if Name in cctv['sidermem'][op.param1]:
+                            mid = client.getContact(op.param2).mid
+                            if mid in cctv['sidermem'][op.param1]:
                                 pass
                             else:
-                                cctv['sidermem'][op.param1] += "\n~ " + Name
-                                pref=['記錄','記錄','記錄','記錄','記錄','記錄','記錄']
-                                client.sendText(op.param1, str(random.choice(pref))+' '+Name)
+                                cctv['sidermem'][op.param1] += "\n~ " + mid
+                                try:
+                                    client.kickoutFromGroup(op.param1, [mid])
+                                except Exception as e:
+                                    print(e)
                         else:
                             pass
                     else:
